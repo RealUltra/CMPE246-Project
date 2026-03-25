@@ -1,3 +1,6 @@
+import os 
+os.environ["GPIOZEREO_PIN_FACTORY"] = "pigpio"
+
 from gpiozero import DistanceSensor, AngularServo, Buzzer
 from time import sleep
 
@@ -29,7 +32,7 @@ def perform_radar_scan():
 def check_and_beep(triggerdist):
     dist_cm = sensor.distance * 100
     if dist_cm < triggerdist:
-        print(f"Object detected is {dist_cm:.1f} cm away“)
+        print(f"Object detected is {dist_cm:.1f} cm away")
         buzzer.on()
         sleep(0.1)
         buzzer.off()
