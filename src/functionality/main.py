@@ -10,7 +10,7 @@ sensor = DistanceSensor(echo=12, trigger=18)
 servo = AngularServo(19, min_angle=0, max_angle=180)
 buzzer = Buzzer(Buzzer_pin)
 triggerdist = 20
-
+scantime = 0.1
 servo.angle = 0
 
 def perform_radar_scan():
@@ -18,24 +18,30 @@ def perform_radar_scan():
     
     for angle in range(0, 181):
         servo.angle = angle
-        check_and_beep(triggerdist)
+        check_and_beep(triggerdist,scantime)
         sleep(0.05)
     
     for angle in range(180, -1, -1):
         servo.angle = angle
-        check_and_beep(triggerdist)
+        check_and_beep(triggerdist,scantime)
         sleep(0.05)
         
     print("Scan Complete")
     servo.angle = 0 
 
-def check_and_beep(triggerdist):
+def check_and_beep(triggerdist, scantime):
     dist_cm = sensor.distance * 100
     if dist_cm < triggerdist:
         print(f"Object detected is {dist_cm:.1f} cm away")
+        temp = dist_cm/triggerdist
+        ont = scantime*temp
+        offt = scantime - ont
+
+
         buzzer.on()
-        sleep(0.1)
+        sleep(ont)
         buzzer.off()
+        sleep(offt)
 
         #change buzzer so it beeps more based off distance. 
 
