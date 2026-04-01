@@ -1,0 +1,209 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(60, 60, 60);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+}
+
+canvas {
+  display: block;
+}
+
+button {
+  font-size: 18px;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#pauseButton {
+  display: block;
+  margin: 15px auto 0 auto;
+  font-size: 20px;
+}
+
+.pauseButton {
+  background-color: #f44336;
+}
+
+.pauseButton:hover {
+  background-color: #d32f2f;
+}
+
+.unpauseButton {
+  background-color: #4caf50;
+}
+
+.unpauseButton:hover {
+  background-color: #388e3c;
+}
+
+#muteButton {
+  display: block;
+  margin: 0 auto 0 auto;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+#muteButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.danger-zone-container {
+  max-width: 220px;
+  margin: 10px auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 15px;
+}
+
+.danger-zone-container label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #ff5555; /* Danger red accent */
+  user-select: none;
+  text-align: center;
+}
+
+.danger-zone-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: space-between;
+  margin: 5px auto;
+}
+
+.danger-zone-slider {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #5e9c76;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+
+.danger-zone-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.danger-zone-slider:focus {
+  background-color: #4a8f5e;
+}
+
+.danger-zone-number-input {
+  width: 70px;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid #ff5555;
+  background-color: #3a3a3a;
+  color: white;
+  outline-offset: 2px;
+  transition: border-color 0.3s, background-color 0.3s;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.danger-zone-number-input:focus {
+  border-color: #ff0000;
+  background-color: #4a1a1a;
+  outline: none;
+}
+
+.danger-zone-number-input::-webkit-outer-spin-button,
+.danger-zone-number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.updateButton {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.updateButton svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  pointer-events: none; /* So clicks go to button */
+  user-select: none;
+}
+
+.updateButton:hover {
+  background-color: #5e9c76;
+  outline: none;
+}
+
+.updateButton:active {
+  transform: scale(0.9);
+}
+
+.cancelButton {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #ff5555; /* Danger red */
+}
+
+.cancelButton svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  pointer-events: none; /* So clicks go to button */
+  user-select: none;
+}
+
+.cancelButton:hover {
+  background-color: #d94b4b; /* Darker red on hover */
+  outline: none;
+}
+
+.cancelButton:active {
+  transform: scale(0.9);
+}
